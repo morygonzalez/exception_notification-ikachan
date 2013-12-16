@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'exception_notification/ikachan/version'
+require 'exception_notifier/ikachan_notifier/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "exception_notification-ikachan"
-  spec.version       = ExceptionNotification::Ikachan::VERSION
+  spec.name          = "exception_notifier-ikachan_notifier"
+  spec.version       = ExceptionNotifier::IkachanNotifier::VERSION
   spec.authors       = ["Uchio KONDO"]
   spec.email         = ["udzura@paperboy.co.jp"]
   spec.description   = %q{ExceptionNotification ikachan plugin}
   spec.summary       = %q{ExceptionNotification ikachan plugin}
-  spec.homepage      = "https://github.com/udzura/exception_notification-ikachan"
+  spec.homepage      = "https://github.com/udzura/exception_notifier-ikachan"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
