@@ -1,4 +1,4 @@
-require "exception_notification/ikachan_notifier/version"
+require "exception_notifier/ikachan_notifier/version"
 require 'net/http'
 
 module ExceptionNotifier
