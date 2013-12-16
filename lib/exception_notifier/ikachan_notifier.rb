@@ -4,7 +4,7 @@ require 'net/http'
 module ExceptionNotifier
   class IkachanNotifier
     class Client
-      def initialize(base_url, channels)
+      def initialize(base_url)
         @base_url = base_url.match(/^https?:\/\/[^\/]+\//) ? base_url : "http://#{base_url}/"
       end
       attr_reader :base_url
@@ -26,13 +26,13 @@ module ExceptionNotifier
       end
 
       def dispatch(type, params = {})
-        uri = URI.parse "#{base_url}#{type.to_s}"
+        uri = URI.parse File.join(base_url, type.to_s)
         Net::HTTP.post_form uri, params
       end
     end
 
     def initialize(options)
-      channel = options[:channels] || options.delete[:channel]
+      channel = options[:channels] || options[:channel]
       if !channel or !options[:base_url]
         raise "Some of option is missing: %s" % options
       end
