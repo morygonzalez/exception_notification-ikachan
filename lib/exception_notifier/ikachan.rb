@@ -1,7 +1,7 @@
-require "exception_notification/ikachan/version"
+require "exception_notifier/ikachan/version"
 require 'net/http'
 
-module ExceptionNotification
+module ExceptionNotifier
   class Ikachan
     class Client
       def initialize(base_url, channels)
