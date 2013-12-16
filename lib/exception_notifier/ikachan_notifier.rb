@@ -44,7 +44,7 @@ module ExceptionNotifier
     attr_reader :client, :channels, :message_format
 
     def call(exception, options = {})
-      client.notice_all(chanenls, build_message(exception))
+      client.notice_all(channels, build_message(exception))
     end
 
     private
